@@ -1,0 +1,25 @@
+{
+  "name": "grpc-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\"",
+    "proto_grcp_gen": "protoc --grpc-node_out=import_style=commonjs,binary:./proto_gen -I proto proto/*.proto",
+    "proto_gen": "protoc --js_out=import_style=commonjs:./proto_gen -I proto proto/*.proto",
+    "proto_g": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./proto_gen --grpc_out=grpc_js:./proto_gen -I proto helloworld.proto"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.2.2",
+    "@grpc/proto-loader": "^0.5.5",
+    "google-protobuf": "^3.14.0"
+  },
+  "devDependencies": {
+    "grpc-tools": "^1.10.0",
+    "husky": "^5.0.6",
+    "protoc-gen-grpc-web": "^1.2.1"
+  }
+}
